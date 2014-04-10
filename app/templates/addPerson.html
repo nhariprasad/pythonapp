@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!-- CSS for Table styling. -->
+<style type="text/css">
+	table.gridtable {
+		font-family: verdana,arial,sans-serif;
+		font-size:11px;
+		color:#333333;
+		border-width: 1px;
+		border-color: #666666;
+		border-collapse: collapse;
+	}
+	table.gridtable th {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #dedede;
+	}
+	table.gridtable td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #ffffff;
+	}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<form action="/addPerson" method="post">
+				<table class="gridtable">
+					<caption><h3>Enter Person Details</caption>
+					<tr>
+						<td>First name:</td> 
+						<td><input type="text" name="firstName"></td>
+					</tr>
+					<tr>
+						<td>Middle name:</td> 
+						<td><input type="text" name="middleName"></td>
+					</tr>
+					<tr>
+						<td>Last name:</td> 
+						<td><input type="text" name="lastName"></td>
+					</tr>
+					<tr>
+						<td>Date of Birth:</td> 
+						<td><input type="date" name="dateOfBirth"></td>
+					</tr>
+				</table>
+				<br>
+				<a href="/">
+					<input type="button" value="Cancel" />
+				</a> <input type="submit" value="Next >">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

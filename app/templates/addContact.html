@@ -1,0 +1,65 @@
+{% extends "addPerson.html" %}
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<table class="gridtable">
+				<caption><h3>Person Details</caption>
+				<tr>
+					<td>First name:</td> 
+					<td>{{firstName}}</td>
+				</tr>
+				<tr>
+					<td>Middle name:</td> 
+					<td>{{middleName}}</td>
+				</tr>
+				<tr>
+					<td>Last name:</td> 
+					<td>{{lastName}}</td>
+				</tr>
+				<tr>
+					<td>Date of Birth:</td> 
+					<td>{{dateOfBirth}}</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="col-md-4">
+			<form action="/addContact" method="post">
+				<table class="gridtable">
+					<caption><h3>Enter Contact Details</caption>
+					<tr>
+						<td>Address Line 1:</td> 
+						<td><input type="text" name="addline1"></td>
+					</tr>
+					<tr>
+						<td>Address Line 2:</td> 
+						<td><input type="text" name="addline2"></td>
+					</tr>
+					<tr>
+						<td>City:</td> 
+						<td><input type="text" name="city"></td>
+					</tr>
+					<tr>
+						<td>Zip:</td> 
+						<td><input type="text" name="zip"></td>
+					</tr>
+					<tr>
+						<td>Mobile Phone:</td> 
+						<td><input type="text" name="mobilePhone"></td>
+					</tr>
+				</table>
+				<br>
+				<a href="/addPerson">
+					<input type="button" value="Back" />
+				</a>
+				<a href="/">
+					<input type="button" value="Cancel" />
+				</a>
+				<input type="submit" value="Next >">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
